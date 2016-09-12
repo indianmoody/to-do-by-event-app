@@ -1,0 +1,1 @@
+This is an app to manage your taks/goals by categories.
