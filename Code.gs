@@ -3,3 +3,9 @@ function doGet() {
       .createTemplateFromFile('index')
       .evaluate();
 }
+
+function include(filename) {
+  return HtmlService.createHtmlOutputFromFile(filename)
+      .setSandboxMode(HtmlService.SandboxMode.IFRAME)
+      .getContent();
+}
