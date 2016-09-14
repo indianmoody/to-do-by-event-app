@@ -8,18 +8,38 @@
 <script>
 function onSuccess(arr) {
     var elements = document.getElementById("div1");
-
+    var iden, iden2;
     for (var i=0; i<arr.length; i++) {
         var para = document.createElement("input");
-        var iden = "task" + i;
-        para.setAttribute("id","task1");
+        iden = "task" + i;
+        para.setAttribute("id",iden);
         para.setAttribute("type","text");
         para.setAttribute("value",arr[i][0]);
         elements.appendChild(para);
+        
+        var para2 = document.createElement("input");
+        iden2 = "date" + i;
+        para2.setAttribute("id",iden2);
+        para2.setAttribute("type","text");
+        para2.setAttribute("value",arr[i][1]);
+        elements.appendChild(para2);
+        
+        var para3 = document.createElement("input");
+        iden3 = "ch" + i;
+        para3.setAttribute("id",iden3);
+        para3.setAttribute("type","checkbox");
+        if (arr[i][2] === "done")
+            para3.setAttribute("checked",true);
+        else
+            para3.setAttribute("cheked",false);
+        elements.appendChild(para3);
+        
         var br = document.createElement('br');
         elements.appendChild(br);
         var br = document.createElement('br');
         elements.appendChild(br);
+        
+        //document.getElementById("div2").innerHTML = document.getElementById(iden).value;
     }
 }
 
