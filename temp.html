@@ -7,8 +7,20 @@
 
 <script>
 function onSuccess(arr) {
-    document.getElementById("userName").value = arr[1][0];
-    console.log("reached!!");
+    var elements = document.getElementById("div1");
+
+    for (var i=0; i<arr.length; i++) {
+        var para = document.createElement("input");
+        var iden = "task" + i;
+        para.setAttribute("id","task1");
+        para.setAttribute("type","text");
+        para.setAttribute("value",arr[i][0]);
+        elements.appendChild(para);
+        var br = document.createElement('br');
+        elements.appendChild(br);
+        var br = document.createElement('br');
+        elements.appendChild(br);
+    }
 }
 
 
