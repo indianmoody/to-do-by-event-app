@@ -1,5 +1,21 @@
 <script>
  function processInfo() {
         document.getElementById("asa").innerHTML = document.getElementById("userName").value;
+        document.getElementById("userAge").value = document.getElementById("userName").value;
     }
+</script>
+
+<script>
+function onSuccess(arr) {
+    document.getElementById("userName").value = arr[1][0];
+    console.log("reached!!");
+}
+
+
+function gettingInitialData() {
+    var arr = google.script.run.withSuccessHandler(onSuccess).logProductInfo();
+    
+    
+}
+
 </script>
