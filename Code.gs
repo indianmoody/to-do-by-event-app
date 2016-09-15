@@ -31,3 +31,17 @@ function writeProductInfo(a) {
   Logger.log(a[1]);
   return true;
 }
+
+function updateProductInfo(b, ind) {
+    var ss3 = SpreadsheetApp.openById("19foDdaYKAT49WJjBFsLtc-tCkO-wD9snz96Rlw_12bc");
+    var sheet3 = ss3.getSheets()[0];
+    var ind1 = "A" + ind;
+    var ind2 = "B" + ind;
+    var ind3 = "C" + ind;
+    sheet3.getRange(ind1).setValue(b[0]);
+    sheet3.getRange(ind2).setValue(b[0]);
+    sheet3.getRange(ind3).setValue(b[0]);
+  
+    return true;
+    
+}  
