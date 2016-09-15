@@ -2,7 +2,7 @@
 function onSuccess(arr) {
 console.log(arr[1]);
     var elements = document.getElementById("div1");
-    var iden, iden2, iden3, i;
+    var iden, iden2, iden3, iden4, i;
     for (i=0; i<arr.length; i++) {
         var para = document.createElement("input");
         iden = "task" + i;
@@ -25,10 +25,14 @@ console.log(arr[1]);
         if (arr[i][2] === "done") {
             para3.setAttribute("checked","true");
         }
-        //else {
-            //para3.setAttribute("checked",false);
-        //}
         elements.appendChild(para3);
+        
+        var para4 = document.createElement("input");
+        iden4 = i;
+        para4.setAttribute("id",iden4);
+        para4.setAttribute("type","button");
+        para4.setAttribute("onclick",updatingEvent(iden4));
+        elements.appendChild(para4);
         
         var br = document.createElement('br');
         elements.appendChild(br);
@@ -63,6 +67,13 @@ console.log(arr[1]);
         para13.setAttribute("id",iden3);
         para13.setAttribute("type","checkbox");
         elements.appendChild(para13);
+        
+        var para4 = document.createElement("input");
+        iden4 = i;
+        para4.setAttribute("id",iden4);
+        para4.setAttribute("type","button");
+        para4.setAttribute("onclick",updatingEvent(iden4));
+        elements.appendChild(para4);
         
         var br = document.createElement('br');
         elements.appendChild(br);
@@ -138,8 +149,25 @@ function addingEvent() {
 </script>
 
 <script>
-function savingAllEvents() {
+function faltu2(boo) {
+console.log("data updated!!");
+}
+
+
+function updatingEvent(token) {
+    var id1 = "task" + token;
+    var id2 = "date" + token;
+    var id3 = "ch" + token;
+    var xtra;
+    if (document.getElementById(id3).checked === true) {
+        xtra = "done";
+    }
+    else {
+        xtra = "in process";
+    }
+    var arr3 = [document.getElementById(id1).value, document.getElementById(id2).value, xtra];
     
+    google.script.run.withSuccessHandler(faltu2).updateProductInfo(arr3, token);
 }
 
 </script>
