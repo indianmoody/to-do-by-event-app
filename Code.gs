@@ -17,8 +17,17 @@ function logProductInfo() {
   
   var data = sheet.getDataRange().getValues();
   for (var i = 0; i < data.length; i++) {
-    Logger.log('Product name: ' + data[i][0]);
-    Logger.log('Product number: ' + data[i][1]);
+    Logger.log(data[i][0]);
+    Logger.log(data[i][1]);
+    Logger.log(data[i][2]);
   }
   return data;
+}
+
+function writeProductInfo(a) {
+    var ss2 = SpreadsheetApp.openById("19foDdaYKAT49WJjBFsLtc-tCkO-wD9snz96Rlw_12bc");
+    var sheet2 = ss2.getSheets()[0];
+    sheet2.appendRow(a);
+  Logger.log(a[1]);
+  return true;
 }
