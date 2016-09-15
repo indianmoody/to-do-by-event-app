@@ -41,6 +41,10 @@ function onSuccess(arr) {
         
         //document.getElementById("div2").innerHTML = document.getElementById(iden).value;
     }
+    if (arr.length > 0) {
+        document.getElementById("counter").value = arr.length;
+    }
+    //document.getElementById("savedcounter").value = arr.length;
 }
 
 
@@ -50,4 +54,12 @@ function gettingInitialData() {
     
 }
 
+</script>
+
+<script>
+function addingEvent() {
+    var j = document.getElementById("counter");
+    // try to add empty field in onSucess method so that ADD button just saves the entered field, i.e. no need for SAVE button.
+    // Also create new empty fields for further entry
+}
 </script>
