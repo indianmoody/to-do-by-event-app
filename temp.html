@@ -8,8 +8,8 @@
 <script>
 function onSuccess(arr) {
     var elements = document.getElementById("div1");
-    var iden, iden2;
-    for (var i=0; i<arr.length; i++) {
+    var iden, iden2, iden3, i;
+    for (i=0; i<arr.length; i++) {
         var para = document.createElement("input");
         iden = "task" + i;
         para.setAttribute("id",iden);
@@ -45,6 +45,33 @@ function onSuccess(arr) {
         document.getElementById("counter").value = arr.length;
     }
     //document.getElementById("savedcounter").value = arr.length;
+    
+    // code for blank fields in last
+    var para = document.createElement("input");
+        iden = "task" + i;
+        para.setAttribute("id",iden);
+        para.setAttribute("type","text");
+        //para.setAttribute("value",arr[i][0]);
+        elements.appendChild(para);
+        
+        var para2 = document.createElement("input");
+        iden2 = "date" + i;
+        para2.setAttribute("id",iden2);
+        para2.setAttribute("type","text");
+        //para2.setAttribute("value",arr[i][1]);
+        elements.appendChild(para2);
+        
+        var para3 = document.createElement("input");
+        iden3 = "ch" + i;
+        para3.setAttribute("id",iden3);
+        para3.setAttribute("type","checkbox");
+        elements.appendChild(para3);
+        
+        var br = document.createElement('br');
+        elements.appendChild(br);
+        var br = document.createElement('br');
+        elements.appendChild(br);
+    
 }
 
 
