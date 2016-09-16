@@ -1,6 +1,7 @@
 // wrap these functions in an html file to use with google scripts app
 
 
+
 function onSuccess(arr) {
 console.log(arr[1]);
     var elements = document.getElementById("div1");
@@ -83,6 +84,7 @@ console.log(arr[1]);
         para13.setAttribute("type","checkbox");
         elements.appendChild(para13);
         
+        /*
         var para4 = document.createElement("input");
         iden4 = "" + i;
         para4.setAttribute("id",iden4);
@@ -106,6 +108,7 @@ console.log(arr[1]);
         elements.appendChild(br);
         var br = document.createElement('br');
         elements.appendChild(br);
+        */
     
 }
 
@@ -140,12 +143,38 @@ function addingEvent() {
     
     google.script.run.withSuccessHandler(faltu).writeProductInfo(arr2);
     
+    var elements = document.getElementById("div1");
+    var iden24, iden25, y;
+    var para44 = document.createElement("input");
+        iden24 = "" + j;
+        para44.setAttribute("id",iden24);
+        para44.setAttribute("type","button");
+        para44.setAttribute("value","update");
+        para44.addEventListener('click', function() { updatingEvent(this.id) });
+        elements.appendChild(para44);
+        console.log(iden24);
+        
+        var para55 = document.createElement("input");
+        y = 1000 + j;
+        iden25 = "" + y;
+        para55.setAttribute("id",iden25);
+        para55.setAttribute("type","button");
+        para55.setAttribute("value","delete");
+        para55.addEventListener('click', function() { deletingEvent(this.id) });
+        elements.appendChild(para55);
+        console.log(iden25);
+        
+        var br = document.createElement('br');
+        elements.appendChild(br);
+        var br = document.createElement('br');
+        elements.appendChild(br);
+    
     var k = parseInt(j);
     k = k + 1;
     document.getElementById("counter").value = k;
     
-    var elements = document.getElementById("div1");
-    var iden, iden2, iden3;
+    //var elements = document.getElementById("div1");
+    var iden, iden2, iden3; //iden4, iden5, z;
     // code for blank fields in last
     var para11 = document.createElement("input");
         iden = "task" + k;
@@ -165,13 +194,33 @@ function addingEvent() {
         para13.setAttribute("type","checkbox");
         elements.appendChild(para13);
         
+        /*
+        var para4 = document.createElement("input");
+        iden4 = "" + k;
+        para4.setAttribute("id",iden4);
+        para4.setAttribute("type","button");
+        para4.setAttribute("value","update");
+        para4.addEventListener('click', function() { updatingEvent(this.id) });
+        elements.appendChild(para4);
+        console.log(iden4);
+        
+        var para5 = document.createElement("input");
+        z = 1000 + k;
+        iden5 = "" + z;
+        para5.setAttribute("id",iden5);
+        para5.setAttribute("type","button");
+        para5.setAttribute("value","delete");
+        para5.addEventListener('click', function() { deletingEvent(this.id) });
+        elements.appendChild(para5);
+        console.log(iden5);
+        
         var br = document.createElement('br');
         elements.appendChild(br);
         var br = document.createElement('br');
         elements.appendChild(br);
+        */
     
 }
-
 
 function faltu2(boo) {
 console.log("data updated!!");
