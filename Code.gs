@@ -46,4 +46,17 @@ function updateProductInfo(b, ind) {
   
     return true;
     
-}  
+}
+
+
+function deleteThisRow(ind) {
+    var ss4 = SpreadsheetApp.openById("19foDdaYKAT49WJjBFsLtc-tCkO-wD9snz96Rlw_12bc");
+    var sheet4 = ss4.getSheets()[0];
+    var indi = parseInt(ind);
+    indi = indi + 1;
+    
+    sheet4.deleteRow(indi);
+  
+    return true;
+    
+}
