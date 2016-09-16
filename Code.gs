@@ -35,12 +35,14 @@ function writeProductInfo(a) {
 function updateProductInfo(b, ind) {
     var ss3 = SpreadsheetApp.openById("19foDdaYKAT49WJjBFsLtc-tCkO-wD9snz96Rlw_12bc");
     var sheet3 = ss3.getSheets()[0];
-    var ind1 = "A" + ind;
-    var ind2 = "B" + ind;
-    var ind3 = "C" + ind;
+    var indi = parseInt(ind);
+    indi = indi + 1;
+    var ind1 = "A" + indi;
+    var ind2 = "B" + indi;
+    var ind3 = "C" + indi;
     sheet3.getRange(ind1).setValue(b[0]);
-    sheet3.getRange(ind2).setValue(b[0]);
-    sheet3.getRange(ind3).setValue(b[0]);
+    sheet3.getRange(ind2).setValue(b[1]);
+    sheet3.getRange(ind3).setValue(b[2]);
   
     return true;
     
